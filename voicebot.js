@@ -56,8 +56,7 @@
    console.log("the write char: " + characteristic);
    for(let k of this._characteristics.keys()) console.log('keys: ' + k);
    for(let v of this._characteristics.values()) console.log('values: ' + v);
-   return characteristic.wrtieValue();
-   // return characteristic.writeValue(value);
+   return characteristic.writeValue(value);
  }
 }
 
