@@ -35,3 +35,71 @@ switch(value)
       break;
   }
 };
+
+/**
+* Add voice control with the annyang library
+*/
+var commands =
+{
+  'stop':halt,
+  'halt':halt,
+  'wait':halt,
+  'go':forward,
+  'forward':forward,
+  'go ahead':forward,
+  'onward':forward,
+  'reverse':reverse,
+  'back':reverse,
+  'back up':reverse,
+  'left':left,
+  'turn left':left,
+  'right':right,
+  'turn right':right
+};
+
+if (annyang)
+{
+ var halt = function()
+ {
+   voicebot._writeCharacteristic(voicebot.mainDriveUUID, new Uint8Array([0,0]));
+ };
+
+ var forward = function()
+ {
+   voicebot._writeCharacteristic(voicebot.mainDriveUUID, new Uint8Array([1,0]));
+ };
+ 
+ var reverse = function()
+ {
+  voicebot._writeCharacteristic(voicebot.mainDriveUUID, new Uint8Array([2,0]));
+ };
+ 
+ var left = function()
+ {
+   voicebot._writeCharacteristic(voicebot.mainDriveUUID, new Uint8Array([3,0]));
+ };
+ 
+ var right = function()
+ { 
+  voicebot._writeCharacteristic(voicebot.mainDriveUUID, new Uint8Array([4,0]));
+ };
+ 
+  annyang.debug();
+  annyang.addCommands(commands);
+  annyang.setLanguage('en');
+  annyang.start();
+ 
+};
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
