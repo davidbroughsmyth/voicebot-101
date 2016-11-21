@@ -39,26 +39,11 @@ switch(value)
 /**
 * Add voice control with the annyang library
 */
-var commands =
-{
-  'stop':halt,
-  'halt':halt,
-  'wait':halt,
-  'go':forward,
-  'forward':forward,
-  'go ahead':forward,
-  'onward':forward,
-  'reverse':reverse,
-  'back':reverse,
-  'back up':reverse,
-  'left':left,
-  'turn left':left,
-  'right':right,
-  'turn right':right
-};
+
 
 if (annyang)
 {
+ 
  var halt = function()
  {
    voicebot._writeCharacteristic(voicebot.mainDriveUUID, new Uint8Array([0,0]));
@@ -84,6 +69,24 @@ if (annyang)
   voicebot._writeCharacteristic(voicebot.mainDriveUUID, new Uint8Array([4,0]));
  };
  
+ var commands =
+ {
+   'stop':halt,
+   'halt':halt,
+   'wait':halt,
+   'go':forward,
+   'forward':forward,
+   'go ahead':forward,
+   'onward':forward,
+   'reverse':reverse,
+   'back':reverse,
+   'back up':reverse,
+   'left':left,
+   'turn left':left,
+   'right':right,
+   'turn right':right
+  };
+  
   annyang.debug();
   annyang.addCommands(commands);
   annyang.setLanguage('en');
