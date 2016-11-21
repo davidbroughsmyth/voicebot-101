@@ -2,16 +2,7 @@
   * The Web Bluetooth API specifies that a user action like a click is needed to
   * initiate a connection.
   */
-function bleConnect(buttonID)
-{
-  //var thisButton = document.getElementById(buttonID);
-  // thisButton.setAttribute("fill-opacity",0.9);
-  console.log('ble connect is clicked');
-  voicebot.connect()
-      .then(() => console.log('connected'))
-      .catch(error => { console.log('connect error!'); });
 
-};
 
 function sendCommand(value)
 {
@@ -94,7 +85,16 @@ if (annyang)
  
 };
  
- 
+function bleConnect(buttonID)
+{
+  //var thisButton = document.getElementById(buttonID);
+  // thisButton.setAttribute("fill-opacity",0.9);
+  console.log('ble connect is clicked');
+  voicebot.connect()
+      .then(() => console.log('connected'))
+      .catch(error => { console.log('connect error!'); });
+
+};
 
 
 
