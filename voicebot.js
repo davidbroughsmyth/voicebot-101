@@ -4,10 +4,9 @@
   class VoiceBot {
 
     /**
-      * The LED class is a object used to represent the BLE service. Note for this project
-      * the read code is not used, but I kept it there for you to see.
-      *
-      * customize your project here to reflect the uuid of your service and characteristics.
+      * The VoiceBot class is a object used to represent the BLE service. 
+      * Customize your project here to reflect the uuid of your service 
+      * and characteristics.
       */
     constructor() {
         this.deviceName     = 'vbot101';
